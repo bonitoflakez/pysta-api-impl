@@ -1,7 +1,9 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from instaloader import Instaloader, Profile
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/fetch_reels/<username>', methods=['GET'])
 def fetch_reels(username):
